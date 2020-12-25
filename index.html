@@ -127,7 +127,7 @@
         <div class="music" data-state="off">
             <img class="music-on" src="icons/sound-on.svg" />
             <img class="music-off" src="icons/sound-off.svg" />
-            <audio autoplay loop>
+            <audio loop>
                 <source src="music.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
@@ -154,7 +154,7 @@
 
         .hotspot {
             position: absolute;
-            outline: 2px red dashed;
+            //outline: 2px red dashed;
             cursor: pointer;
             transition: opacity 0.25s ease;
             border-radius: 5px;
@@ -412,7 +412,7 @@
             music.dataset.state = (music.dataset.state == 'off' ? 'on' : 'off');
             if (music.dataset.state == 'on') {
                 audio.play();
-                audio.volume = 0.25;
+                audio.volume = 0.4;
             } else {
                 audio.pause();
             }
