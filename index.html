@@ -14,7 +14,8 @@
         <div class="modals">
             <div class="modal" data-zone="palace" style="background-image: url(palace.jpg);">
                 <div class="modal-close"></div>
-                <div class="hotspot" data-zone="map" style="top: 120px; right: 310px; width: 150px; height: 60px"></div>
+                <!--div class="hotspot" data-zone="map" style="top: 120px; right: 310px; width: 150px; height: 60px"></div-->
+                <div class="hotspot" data-zone="library" style="top: 215px; right: 200px; width: 50px; height: 30px"></div>
             </div>
             <div class="modal" data-zone="plaza" style="background-image: url(plaza.jpg);">
                 <div class="modal-close"></div>
@@ -27,15 +28,15 @@
             <div class="temple modal" data-zone="temple" data-message="A golden light shimmers from somewhere to the west." style="background-image: url(temple.jpg);">
                 <div class="modal-close"></div>
             </div>
-            <div class="modal" data-zone="gate" style="background-image: url(gate.jpg);">
+            <div class="disabled modal" data-zone="gate" data-message="The door is shut, but there is a small gap at it's side which you may be able to be pry open." style="background-image: url(gate.jpg);">
                 <div class="modal-close"></div>
                 <div class="hotspot" data-zone="ruin" style="top: 110px; right: 150px; width: 150px; height: 350px"></div>
             </div>
-            <div class="disabled modal" data-zone="ruin" data-message="" style="background-image: url(ruin.jpg);">
+            <div class="modal" data-zone="ruin" style="background-image: url(ruin.jpg);">
                 <div class="modal-close"></div>
                 <div class="hotspot" data-zone="chamber" style="top: 100px; right: 300px; width: 250px; height: 150px"></div>
             </div>
-            <div class="dark modal" data-zone="chamber" data-message="Doubt everything. Find your own light.">
+            <div class="dark modal" data-zone="chamber" data-message='"Doubt everything. Find your own light."'>
                 <div class="modal-close" data-zone="ruin"></div>
                 <div class="background" style="background-image: url(chamber.jpg);"></div>
                 <div class="hotspot" data-zone="conch" style="top: 275px; right: 210px; width: 150px; height: 70px"></div>
@@ -48,10 +49,22 @@
                 <div class="modal-close" data-zone="chamber"></div>
                 <div class="hotspot" data-item="conch" style="top: 5px; right: 5px; left: 5px; bottom: 5px"></div>
             </div>
+            <div class="vertical modal" data-zone="library" style="background-image: url(library.jpg);">
+                <div class="modal-close" data-zone="palace"></div>
+                <div class="hotspot" data-zone="krishna" style="top: 225px; right: 95px; width: 60px; height: 100px"></div>
+                <div class="hotspot" data-zone="map" style="bottom: 2px; right: 294px; width: 60px; height: 35px"></div>
+                <div class="hotspot" data-zone="laozi" style="top: 380px; right: 285px; width: 120px; height: 60px"></div>
+            </div>
+            <div class="vertical sunken modal" data-zone="krishna" style="background-image: url(krishna.jpg);">
+                <div class="modal-close" data-zone="library"></div>
+            </div>
             <div class="text modal" data-zone="plaque">
                 <div class="modal-close" data-zone="plaza"></div>
                 <p>
-                    “SHOW GOOD WILL TO ALL
+                    <em>There is an inscription at the base of the statue.</em>
+                </p>
+                <p>
+                    “Show good wil to all
                     <br>
                     Be fearless and pure;
                     <br>
@@ -94,15 +107,28 @@
                 </p>
             </div>
             <div class="text modal" data-zone="map">
-                <div class="modal-close" data-zone="palace"></div>
+                <div class="modal-close" data-zone="library"></div>
                 <p>
-                    In the palace you find a map showing:
-                    <br>
+                    You find a map showing:
+                </p>
+                <p>
                      - A temple at the base of the mountain.
                     <br>
                      - A plaza near the middle of the city.
                     <br>
                      - A hidden door under a tower on the east side of the mountain.
+                </p>
+            </div>
+            <div class="text modal" data-zone="laozi">
+                <div class="modal-close" data-zone="library"></div>
+                <p>
+                    An ancient text reads as follows...
+                </p>
+                <p>
+                    "Life is a series of natural and spontaneous changes. Don't resist them - that only creates sorrow. Let reality be reality. Let things flow naturally forward in whatever way they like."
+                </p>
+                <p>
+                    "A good traveler has no fixed plans and is not intent on arriving."
                 </p>
             </div>
         </div>
@@ -114,7 +140,7 @@
             <div class="item" data-tooltip="Sanjivani">
                 <img src="icons/herb.svg" />
             </div>
-            <div class="item" data-tooltip="Walking Stick">
+            <div class="item" data-tooltip="Walking Stick" data-zone="gate">
                 <img src="icons/staff.svg" />
             </div>
             <div class="lost item" data-tooltip="Undying Candle" data-zone="chamber">
@@ -134,11 +160,24 @@
         </div>
     </body>
     <style>
+        html {
+            background: black;
+            width: 100vw;
+            height: 100vh;
+        }
+
         body {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+
+            width: 1400px;
+            height: 800px;
+            max-width: 100vw;
+            margin: auto;
+            position: relative;
             display: block;
-            background-color: black;
             background-image: url("./wide.png");
             background-size: cover;
             background-repeat: no-repeat;
@@ -146,6 +185,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
+        }
+
+        @media screen and (min-width: 1401px) {
+            body {
+                border-radius: 20px;
+            }
         }
 
         body:not([data-zone=""]) .hotspots {
@@ -174,8 +219,8 @@
             border-radius: 5px;
             box-shadow: 5px 5px 10px;
             position: absolute;
-            width: 80vw;
-            top: 50%;
+            width: 930px;
+            top: 45%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
             box-sizing: border-box;
@@ -184,6 +229,10 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+        }
+
+        .vertical.modal {
+            width: 510px;
         }
 
         .modal .background {
@@ -198,6 +247,11 @@
             filter: grayscale(100%) brightness(15%);
         }
 
+        .sunken.modal {
+            filter: sepia(10%) hue-rotate(145deg) blur(0.5px) saturate(60%) grayscale(50%);
+        }
+
+        .disabled.modal .hotspot,
         .dark.modal .hotspot {
             display: none;
         }
@@ -239,6 +293,10 @@
             padding-bottom: 56.25%;
         }
 
+        .modal.vertical::before {
+            padding-bottom: 132%;
+        }
+
         .modal-close {
             position: absolute;
             top: 0;
@@ -253,7 +311,7 @@
 
         .inventory {
             position: absolute;
-            bottom: 10px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -262,7 +320,7 @@
         .effect {
             color: rgb(137, 232, 166);
             position: absolute;
-            bottom: 100px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             opacity: 0;
@@ -339,7 +397,10 @@
         body[data-zone="gate"] .modal[data-zone="gate"],
         body[data-zone="plaque"] .modal[data-zone="plaque"],
         body[data-zone="conch"] .modal[data-zone="conch"],
-        body[data-zone="map"] .modal[data-zone="map"] {
+        body[data-zone="map"] .modal[data-zone="map"],
+        body[data-zone="library"] .modal[data-zone="library"],
+        body[data-zone="krishna"] .modal[data-zone="krishna"],
+        body[data-zone="laozi"] .modal[data-zone="laozi"] {
             display: block;
         }
     </style>
@@ -390,13 +451,22 @@
             const item = items[i];
             item.onclick = function() {
                 if (document.body.dataset.zone == item.dataset.zone) {
+                    let modal;
+
                     switch (item.dataset.tooltip) {
                         case "Undying Candle":
                             showEffect("A warm light fills the room.", 3000);
                             document.querySelector("[data-tooltip='Undying Candle']").classList.add('lost');
-                            const modal = document.querySelector(".modal[data-zone=chamber]")
+                            modal = document.querySelector(".modal[data-zone=chamber]")
                             modal.classList.remove("dark")
-                            modal.dataset.message = ""
+                            delete modal.dataset.message
+                            break;
+                        case "Walking Stick":
+                            showEffect("You wedge the door open with the stick, leaving it there.", 3000);
+                            document.querySelector("[data-tooltip='Walking Stick']").classList.add('lost');
+                            modal = document.querySelector(".modal[data-zone=gate]")
+                            modal.classList.remove("disabled")
+                            delete modal.dataset.message
                             break;
                     }
                 } else {
