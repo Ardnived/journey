@@ -1,0 +1,421 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=IM+Fell+English:ital@1&display=swap" rel="stylesheet">
+    </head>
+    <body data-zone="">
+        <div class="hotspots">
+            <div class="hotspot" data-zone="palace" style="top: 75px; right: 195px; width: 60px; height: 80px"></div>
+            <div class="hotspot" data-zone="plaza" style="top: 295px; right: 315px; width: 60px; height: 60px"></div>
+            <div class="hotspot" data-zone="temple" style="top: 430px; right: 250px; width: 80px; height: 50px"></div>
+            <div class="hotspot" data-zone="ship" style="top: 600px; right: 800px; width: 180px; height: 40px"></div>
+            <div class="hotspot" data-zone="gate" style="top: 230px; right: 160px; width: 60px; height: 60px"></div>
+        </div>
+        <div class="modals">
+            <div class="modal" data-zone="palace" style="background-image: url(palace.jpg);">
+                <div class="modal-close"></div>
+                <div class="hotspot" data-zone="map" style="top: 120px; right: 310px; width: 150px; height: 60px"></div>
+            </div>
+            <div class="modal" data-zone="plaza" style="background-image: url(plaza.jpg);">
+                <div class="modal-close"></div>
+                <div class="hotspot" data-zone="plaque" style="top: 285px; right: 480px; width: 45px; height: 50px"></div>
+            </div>
+            <div class="modal" data-zone="ship" style="background-image: url(ship.jpg);">
+                <div class="modal-close"></div>
+                <div class="hotspot" data-zone="treasure" style="top: 380px; right: 550px; width: 150px; height: 80px"></div>
+            </div>
+            <div class="temple modal" data-zone="temple" data-message="A golden light shimmers from somewhere to the west." style="background-image: url(temple.jpg);">
+                <div class="modal-close"></div>
+            </div>
+            <div class="modal" data-zone="gate" style="background-image: url(gate.jpg);">
+                <div class="modal-close"></div>
+                <div class="hotspot" data-zone="ruin" style="top: 110px; right: 150px; width: 150px; height: 350px"></div>
+            </div>
+            <div class="disabled modal" data-zone="ruin" data-message="" style="background-image: url(ruin.jpg);">
+                <div class="modal-close"></div>
+                <div class="hotspot" data-zone="chamber" style="top: 100px; right: 300px; width: 250px; height: 150px"></div>
+            </div>
+            <div class="dark modal" data-zone="chamber" data-message="Doubt everything. Find your own light.">
+                <div class="modal-close" data-zone="ruin"></div>
+                <div class="background" style="background-image: url(chamber.jpg);"></div>
+                <div class="hotspot" data-zone="conch" style="top: 275px; right: 210px; width: 150px; height: 70px"></div>
+            </div>
+            <div class="modal" data-zone="treasure" style="background-image: url(treasure.jpg); background-position: bottom center;">
+                <div class="modal-close" data-zone="ship"></div>
+                <div class="hotspot" data-item="candle" style="top: 410px; right: 310px; width: 50px; height: 50px"></div>
+            </div>
+            <div class="conch modal" data-zone="conch" style="background-image: url(conch.jpg); background-position: bottom center;">
+                <div class="modal-close" data-zone="chamber"></div>
+                <div class="hotspot" data-item="conch" style="top: 5px; right: 5px; left: 5px; bottom: 5px"></div>
+            </div>
+            <div class="text modal" data-zone="plaque">
+                <div class="modal-close" data-zone="plaza"></div>
+                <p>
+                    “SHOW GOOD WILL TO ALL
+                    <br>
+                    Be fearless and pure;
+                    <br>
+                    never waiver in your determination or
+                    <br>
+                    your dedication to the spiritual life.
+                    <br>
+                    Give freely. Be self-controlled,
+                    <br>
+                    sincere, truthful, loving,
+                    <br>
+                    and full of the desire to serve.
+                </p>
+                <p>
+                    Realize the truth of the scriptures;
+                    <br>
+                    learn to be detached and to
+                    <br>
+                    take joy in renunciation.
+                    <br>
+                    Do not get angry or
+                    <br>
+                    harm any living creature,
+                    <br>
+                    but be compassionate and gentle;
+                    <br>
+                    show good will to all.
+                </p>
+                <p>
+                    Cultivate vigor, patience, will purity;
+                    <br>
+                    avoid malice and pride
+                    <br>
+                    Then, you will achieve
+                    <br>
+                    your divine destiny.”
+                </p>
+                <p>
+                    ― Bhagavad Gita
+                </p>
+            </div>
+            <div class="text modal" data-zone="map">
+                <div class="modal-close" data-zone="palace"></div>
+                <p>
+                    In the palace you find a map showing:
+                    <br>
+                     - A temple at the base of the mountain.
+                    <br>
+                     - A plaza near the middle of the city.
+                    <br>
+                     - A hidden door under a tower on the east side of the mountain.
+                </p>
+            </div>
+        </div>
+        <div class="inventory">
+            <div class="effect"></div>
+            <div class="item" data-tooltip="Mantra Book">
+                <img src="icons/book.svg" />
+            </div>
+            <div class="item" data-tooltip="Sanjivani">
+                <img src="icons/herb.svg" />
+            </div>
+            <div class="item" data-tooltip="Walking Stick">
+                <img src="icons/staff.svg" />
+            </div>
+            <div class="lost item" data-tooltip="Undying Candle" data-zone="chamber">
+                <img src="icons/candle.svg" />
+            </div>
+            <div class="lost item" data-tooltip="Conch">
+                <img src="icons/shell.svg" />
+            </div>
+        </div>
+        <div class="music" data-state="off">
+            <img class="music-on" src="icons/sound-on.svg" />
+            <img class="music-off" src="icons/sound-off.svg" />
+            <audio autoplay loop>
+                <source src="music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </body>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-color: black;
+            background-image: url("./wide.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top right;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body:not([data-zone=""]) .hotspots {
+            display: none;
+        }
+
+        .hotspot {
+            position: absolute;
+            outline: 2px red dashed;
+            cursor: pointer;
+            transition: opacity 0.25s ease;
+            border-radius: 5px;
+            border-color: white;
+            box-sizing: border-box;
+            opacity: 0.5;
+        }
+
+        .hotspot:hover {
+            opacity: 1;
+            background: rgba(255,255,255,0.15);
+            border: 2px solid lightblue;
+        }
+
+        .modal {
+            display: none;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px;
+            position: absolute;
+            width: 80vw;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            box-sizing: border-box;
+
+            background-color: rgba(0,0,0,0.5);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .modal .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .dark.modal .background {
+            filter: grayscale(100%) brightness(15%);
+        }
+
+        .dark.modal .hotspot {
+            display: none;
+        }
+
+        .modal:hover[data-message]::after {
+            content: attr(data-message);
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: rgb(200,200,200);
+            font-style: italic;
+            background: rgba(0,0,0,0.5);
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .text.modal {
+            min-height: 200px;
+            padding: 2em;
+            max-width: 600px;
+            background-color: rgba(0,0,0,0.75);
+        }
+
+        .text.modal p {
+            color: rgb(200,200,200);
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
+            font-style: italic;
+        }
+
+        .modal:not(.text)::before {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 0;
+            right: -42.5px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .modal-close:after {
+            content: '✖';
+        }
+
+        .inventory {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .effect {
+            color: rgb(137, 232, 166);
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            white-space: nowrap;
+        }
+
+        .negative.effect {
+            color: rgb(232, 162, 137);
+        }
+
+        .visible.effect {
+            opacity: 1;
+        }
+
+        .lost.item {
+            display: none;
+        }
+
+        .item {
+            height: 50px;
+            width: 50px;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .item:hover::before {
+            content: attr(data-tooltip);
+            display: block;
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.75);
+            border-radius: 5px;
+            padding: 4px 8px;
+
+            white-space: nowrap;
+            text-align: center;
+            color: white;
+        }
+
+        .music {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .music img {
+            opacity: 0.8;
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+        .music img:hover {
+            opacity: 1;
+        }
+
+        .music[data-state="off"] .music-on,
+        .music[data-state="on"] .music-off {
+            display: none;
+        }
+
+        body[data-zone="palace"] .modal[data-zone="palace"],
+        body[data-zone="plaza"] .modal[data-zone="plaza"],
+        body[data-zone="ruin"] .modal[data-zone="ruin"],
+        body[data-zone="ship"] .modal[data-zone="ship"],
+        body[data-zone="temple"] .modal[data-zone="temple"],
+        body[data-zone="chamber"] .modal[data-zone="chamber"],
+        body[data-zone="treasure"] .modal[data-zone="treasure"],
+        body[data-zone="gate"] .modal[data-zone="gate"],
+        body[data-zone="plaque"] .modal[data-zone="plaque"],
+        body[data-zone="conch"] .modal[data-zone="conch"],
+        body[data-zone="map"] .modal[data-zone="map"] {
+            display: block;
+        }
+    </style>
+    <script>
+        const effect = document.querySelector('.effect');
+        let effectTimeout;
+        function showEffect(message = "No Effect", duration = 800) {
+            clearTimeout(effectTimeout);
+            effect.innerText = message;
+            effectTimeout = setTimeout(() => effect.classList.remove("visible"), duration);
+            effect.classList.add("visible");
+            effect.classList.toggle("negative", message == "No Effect")
+        }
+
+        const hotspots = document.querySelectorAll('.hotspot');
+        for (let i = 0; i < hotspots.length; i++) {
+            const hotspot = hotspots[i];
+            hotspot.onclick = function() {
+                if (hotspot.dataset.zone) {
+                    document.body.dataset.zone = hotspot.dataset.zone;
+                }
+
+                switch (hotspot.dataset.item) {
+                    case "candle":
+                        document.querySelector("[data-tooltip='Undying Candle']").classList.remove('lost');
+                        document.querySelector("[data-item=candle]").remove();
+                        showEffect("You pick up the candle.", 3000);
+                        break;
+                    case "conch":
+                        alert("Congratulations, you have found the conch! Take a screenshot of this page and post it in your journal channel, then mention the @Narrator to move on.");
+                        document.querySelector("[data-tooltip='Conch']").classList.remove('lost');
+                        document.querySelector("[data-item=conch]").remove();
+                        showEffect("You pick up the conch.", 3000);
+                        break;
+                }
+            }
+        }
+
+        const closeButtons = document.querySelectorAll('.modal-close');
+        for (let i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].onclick = function() {
+                document.body.dataset.zone = closeButtons[i].dataset.zone || "";
+            }
+        }
+
+        const items = document.querySelectorAll('.item');
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            item.onclick = function() {
+                if (document.body.dataset.zone == item.dataset.zone) {
+                    switch (item.dataset.tooltip) {
+                        case "Undying Candle":
+                            showEffect("A warm light fills the room.", 3000);
+                            document.querySelector("[data-tooltip='Undying Candle']").classList.add('lost');
+                            const modal = document.querySelector(".modal[data-zone=chamber]")
+                            modal.classList.remove("dark")
+                            modal.dataset.message = ""
+                            break;
+                    }
+                } else {
+                    showEffect();
+                    console.log('show effect')
+                }
+            }
+        }
+
+        const audio = document.querySelector('audio')
+        const music = document.querySelector('.music')
+        music.onclick = function() {
+            music.dataset.state = (music.dataset.state == 'off' ? 'on' : 'off');
+            if (music.dataset.state == 'on') {
+                audio.play();
+                audio.volume = 0.25;
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</html>
